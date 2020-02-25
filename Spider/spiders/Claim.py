@@ -7,8 +7,19 @@ import scrapy
 from scrapy import Request, FormRequest
 from scrapy.utils.log import configure_logging
 
+<<<<<<< HEAD
 from Spider.items import ClaimRecordItem, PersonItem, ClaimItem
 from Spider.items import MyItemLoader
+=======
+<<<<<<< HEAD
+from Spider.items import ClaimRecordItem, PersonItem, ClaimItem
+from Spider.items import MyItemLoader
+=======
+from Spider.items import ClaimRecordItem, ClaimRecordItemLoader
+from Spider.items import PersonItem, PersonItemLoader
+from Spider.items import ClaimItem, ClaimItemLoader
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
 from Spider.utils.process import *
 
 class ClaimSpider(scrapy.Spider):
@@ -40,7 +51,15 @@ class ClaimSpider(scrapy.Spider):
             claims = len(parent.css(".four.columns.clear"))
             person_url = parent.css("strong a::attr(href)").extract_first()
 
+<<<<<<< HEAD
             item_loader = MyItemLoader(item=ClaimRecordItem())
+=======
+<<<<<<< HEAD
+            item_loader = MyItemLoader(item=ClaimRecordItem())
+=======
+            item_loader = ClaimRecordItemLoader(item=ClaimRecordItem())
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
             item_loader.add_value(None, {"website_order": total_order+order+1, "person_id": person_url,
                                          "claim_id": claim_url, "claim_role": claim_role, "claim_role_note": claim_role})
             record_item = item_loader.load_item()
@@ -68,7 +87,15 @@ class ClaimSpider(scrapy.Spider):
 #logger.setLevel(logging.INFO)
 
     def parse_person(self, response):
+<<<<<<< HEAD
         item_loader = MyItemLoader(item=PersonItem(), response=response)
+=======
+<<<<<<< HEAD
+        item_loader = MyItemLoader(item=PersonItem(), response=response)
+=======
+        item_loader = PersonItemLoader(item=PersonItem(), response=response)
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
         item_loader.add_value("person_id", response.url)
         item_loader.add_css("name", ".twelve.columns.main .name::text")
         item_loader.add_value("claims", response.meta["claims"])
@@ -87,7 +114,15 @@ class ClaimSpider(scrapy.Spider):
 
 
     def parse_claim(self, response):
+<<<<<<< HEAD
         item_loader = MyItemLoader(item=ClaimItem(), response=response)
+=======
+<<<<<<< HEAD
+        item_loader = MyItemLoader(item=ClaimItem(), response=response)
+=======
+        item_loader = ClaimItemLoader(item=ClaimItem(), response=response)
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
         item_loader.add_value("claim_id", response.url)
         # claim date, enslaved, money, money_s, money_d
         claim_str = response.css('.date').extract_first()

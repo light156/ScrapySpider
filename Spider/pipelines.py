@@ -38,10 +38,22 @@ class MysqlTwistedPipeline(object):
     def __init__(self, dbpool):
         conn = pymysql.connect(host="127.0.0.1", user='root', password='takashi', db="claim_spider", charset='utf8')
         cursor = conn.cursor()
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
         cursor.execute("TRUNCATE TABLE firm_table")
         #cursor.execute("TRUNCATE TABLE claim_table")
         #cursor.execute("TRUNCATE TABLE claim_record")
         #cursor.execute("TRUNCATE TABLE claim_person")
+<<<<<<< HEAD
+=======
+=======
+        cursor.execute("TRUNCATE TABLE claim_table")
+        cursor.execute("TRUNCATE TABLE claim_record")
+        cursor.execute("TRUNCATE TABLE claim_person")
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
         conn.commit()
         cursor.close()
         conn.close()
