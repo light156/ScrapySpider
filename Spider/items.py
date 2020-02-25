@@ -155,6 +155,13 @@ class LegacyItem(scrapy.Item):
         return insert_sql, params
 
 
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
+>>>>>>> 39fd68805aa9f9c685481209409f89c5a974629e
 class FirmItem(scrapy.Item):
     website_order = scrapy.Field()
     firm_id = scrapy.Field()
@@ -178,4 +185,25 @@ class FirmItem(scrapy.Item):
 
 
 class MyItemLoader(ItemLoader):
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+=======
+=======
+class ClaimRecordItemLoader(ItemLoader):
+    default_output_processor = TakeFirst()
+
+
+class PersonItemLoader(ItemLoader):
+    default_output_processor = TakeFirst()
+
+
+class ClaimItemLoader(ItemLoader):
+    default_output_processor = TakeFirst()
+
+
+class LegacyItemLoader(ItemLoader):
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
+>>>>>>> 39fd68805aa9f9c685481209409f89c5a974629e
     default_output_processor = TakeFirst()

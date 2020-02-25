@@ -7,7 +7,19 @@ import scrapy
 from urllib.parse import urljoin
 from scrapy import Request, FormRequest
 
+<<<<<<< HEAD
 from Spider.items import LegacyItem, MyItemLoader
+=======
+<<<<<<< HEAD
+from Spider.items import LegacyItem, MyItemLoader
+=======
+<<<<<<< HEAD
+from Spider.items import LegacyItem, MyItemLoader
+=======
+from Spider.items import LegacyItem, LegacyItemLoader
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
+>>>>>>> 39fd68805aa9f9c685481209409f89c5a974629e
 from Spider.utils.process import match_keyword
 
 
@@ -58,7 +70,19 @@ class LegacySpider(scrapy.Spider):
 
 
 	def parse_commercial(self, response):
+<<<<<<< HEAD
 		item_loader = MyItemLoader(item=LegacyItem(), response=response)
+=======
+<<<<<<< HEAD
+		item_loader = MyItemLoader(item=LegacyItem(), response=response)
+=======
+<<<<<<< HEAD
+		item_loader = MyItemLoader(item=LegacyItem(), response=response)
+=======
+		item_loader = LegacyItemLoader(item=LegacyItem(), response=response)
+>>>>>>> 22c974afc008589b7f80f420f7ebf6e0d5794033
+>>>>>>> 2b4d1433e506a14c377ce697c0cfa9c2ae9c9c2a
+>>>>>>> 39fd68805aa9f9c685481209409f89c5a974629e
 		meta_dict = {key: response.meta[key] for key in ['website_order', 'person_id', 'name', 'comm_id']}
 		item_loader. add_value(None, meta_dict)
 
