@@ -159,12 +159,8 @@ class FirmItem(scrapy.Item):
     website_order = scrapy.Field()
     firm_id = scrapy.Field()
     firm_name = scrapy.Field()
-    address_st = scrapy.Field(
-        input_processor=lambda s: re.match(" (.*),.*", s[0]).group(1) if s else s
-    )
-    address_city = scrapy.Field(
-        input_processor=lambda s: re.match(".*, (.*?) \[.*", s[0]+' []').group(1) if s else s
-    )
+    address_st = scrapy.Field()
+    address_city = scrapy.Field()
     year = scrapy.Field()
 
     def get_insert_sql(self):
